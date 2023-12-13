@@ -1,33 +1,35 @@
 {% extends 'core/base.html' %}
-{% block title %}Gastos {% endblock %}
+{% block title %}Presupuestos {% endblock %}
 
 {% block background %}{% load static %}{% static 'core/img/portfolio.jpg' %}{% endblock %}
 {% block headers %}
-<h1>Gastos</h1>
-<span class="subheading">Control de Gastos</span>
+<h1>Presupuestos</h1>
+<span class="subheading">Costos por servicio</span>
 {% endblock %}
 
 {% block content %}
 <!-- Proyecto -->
 
 <div class="container">
-    <h4 class="subheading">Tabla de gastos</h4>
-    <table id="tablaTransacciones" class="table table-responsive">
-        <tbody id="tbody">
-            <tr>
-                <th>Categoria</th>
-                <th>Descripcion</th>
-                <th>Monto</th>
-            </tr>
-            {% for project in projects %}
-            <tr>
-                <td>{{project.categoria}}</td>
-                <td>{{project.descripcion}}</td>
-                <td>{{project.monto}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <h4 class="subheading">Costos por servicio</h4>
+    <div class="justify-content-center">
+        <table id="tablaTransacciones" class="table table-responsive">
+            <tbody id="tbody">
+                <tr>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                    <th>Monto</th>
+                </tr>
+                {% for project in projects %}
+                <tr>
+                    <td>{{project.categoria}}</td>
+                    <td>{{project.descripcion}}</td>
+                    <td>{{project.monto}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 <script>
     let row = document.createElement("tr");
