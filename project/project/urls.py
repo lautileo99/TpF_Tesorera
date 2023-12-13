@@ -19,6 +19,7 @@ from django.urls import path
 from core import views
 from django.conf import settings
 from portafolio import views as portafolio_views
+from gastos import views as gastos_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,7 @@ urlpatterns = [
     path('about/', views.about, name="About"),
     path('contact/', views.contact, name="contact"),
     path('Portafolio/', portafolio_views.portafolio, name="Portafolio"),
+    path('gastos/', gastos_views.gastos, name="gastos"),
 ]
 
 if settings.DEBUG:
